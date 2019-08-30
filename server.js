@@ -1,10 +1,24 @@
 let express = require('express')
-let path = require('path')
+
 
 let $ = express()
 
+$.set("view engine", "ejs");
+
+
 $.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname + "/vues/index.html"))
+    res.render("index", {
+
+        personnes: [{
+                prenom: "monsieur",
+                nom: "univer"
+            },
+            {
+                prenom: "mister",
+                nom: "strange"
+            }
+        ]
+    })
 })
 
 $.get('/inscription/', (req, res) => {

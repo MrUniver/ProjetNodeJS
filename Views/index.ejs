@@ -1,0 +1,14 @@
+<% include Elements/header %>
+<body>
+    
+    <h1>Bonjour
+        <ul>
+            <% locals.personnes.forEach(function(personne){ %>
+               <li> <%= personne.nom + "  " + personne.prenom %></li>
+            <% }); %>
+        </ul>
+       
+    </h1>
+</body>
+
+</html>
